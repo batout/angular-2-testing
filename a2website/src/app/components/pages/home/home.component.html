@@ -2,7 +2,10 @@
   home works!
 </p>
 <ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.$value}}
+  <li *ngFor="let item of items | async">
+     {{ item | json }}
   </li>
 </ul>
+<h2>{{ (item | async)?.sensor1 }}</h2>
+
+<button class="btn btn-primary" type="button" name="button" (click)="getValues()">click</button>
