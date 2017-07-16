@@ -11,6 +11,12 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+import { RouterModule} from '@angular/router';
+import {appRoutes} from "./app-routes";
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +27,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule
   ],
